@@ -1,0 +1,82 @@
+\documentclass[12pt]{article}
+
+\setlength{\topmargin}{-0.5 in}
+\setlength{\textheight}{9.5 in}
+\setlength{\oddsidemargin}{-0.4 in}
+\setlength{\textwidth}{7.0 in}
+
+\usepackage{amsmath,graphicx,amssymb}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\pagestyle{empty}
+\begin{document}
+	
+\centerline{Quantum Computing
+	\hspace{0.4 in}V. Kamat
+	\hspace{0.4 in}Problem set I}
+\section*{Group I}
+\begin{enumerate}
+
+\item 
+Let $z = 3 - 4i$.
+\begin{enumerate}
+\item Write $z$ in polar form $re^{i\theta}$.
+\item Compute $z^2$ in both Cartesian and polar form.
+\item Verify that $|z^2| = |z|^2$.
+\end{enumerate}
+
+\item 
+Let
+$|v\rangle =
+\begin{pmatrix}
+1+i \\
+2
+\end{pmatrix}.$
+\begin{enumerate}
+\item Compute $\langle v|$.
+\item Compute $\langle v|v\rangle$.
+\item Normalize $|v\rangle$ to obtain a unit vector.
+\end{enumerate}
+
+\item 
+Let
+$
+|u\rangle =
+\begin{pmatrix}
+1 \\
+i
+\end{pmatrix},
+\quad
+|v\rangle =
+\begin{pmatrix}
+1 \\
+- i
+\end{pmatrix},
+\quad
+|w\rangle =
+\begin{pmatrix}
+1 \\
+1
+\end{pmatrix}.
+$
+\begin{enumerate}
+\item Compute $\langle u|v\rangle$, $\langle v|u\rangle$, and verify that $|u\rangle$ and $|v\rangle$ are orthogonal.
+\item Compute $\langle u|w\rangle$ and $\langle w|u\rangle$, and verify that
+$\langle u|w\rangle = \overline{\langle w|u\rangle}.$
+\end{enumerate}
+
+
+\end{enumerate}
+\section*{Group II}
+\begin{enumerate}
+\item 
+Consider the following (hypothetical) situation at Villanova. Thirty percent of all computer science majors become math majors after one year. Another sixty percent become physics majors after one year. Similarly, after a year, seventy percent of the physics majors become computer science majors and ten percent become math majors. Math majors are comparatively the happiest: only twenty percent become computer science majors, and another twenty percent become physics majors after a year. Assume that all percentages stated are mutually exclusive, and that each student has a single major at the start of each academic year. Answer the following questions
+\begin{itemize}
+    \item Write out the adjacency matrix that describes these probabilistic transitions from one year to the next, and observe that it is doubly stochastic.
+    \item If a student enters college declaring a physics major, what is the probability that they are a math major at the start of their third year? 
+\end{itemize}
+\end{enumerate}
+
+\end{document}
