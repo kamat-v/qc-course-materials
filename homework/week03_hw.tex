@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+
+\setlength{\topmargin}{-0.5 in}
+\setlength{\textheight}{9.5 in}
+\setlength{\oddsidemargin}{-0.4 in}
+\setlength{\textwidth}{7.0 in}
+
+\usepackage{amsmath,graphicx,amssymb}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\pagestyle{empty}
+\begin{document}
+	
+\centerline{QC HW 3
+	\hspace{0.4 in}V. Kamat
+	\hspace{0.4 in}Spring 2026}
+
+\section*{Group I}
+
+\begin{enumerate}
+\item For each of the following expressions, determine whether or not they represent valid qubit states.
+\begin{enumerate}
+    \item $\frac{1}{2}|0\rangle+\frac{1}{2}|1\rangle$
+    \item $e^{-i}|1\rangle$
+    \item $2|0\rangle-1|1\rangle$
+    \item $\sqrt{\frac{4}{7}}|0\rangle+\sqrt{\frac{3}{7}}|1\rangle$
+\end{enumerate}
+\item Find a suitable value of $x$ for which $|\psi\rangle = \dfrac{1}{3}|0\rangle+x|1\rangle$ is a valid qubit state. 
+\item Find all possible values of $x$ for which $|\psi\rangle = \dfrac{1}{\sqrt{2}}|0\rangle+x|1\rangle$ is a valid qubit state.
+\\
+\\
+\textbf{Hint:} There are infinitely many solutions. Consider using Euler's formula to describe them. 
+\item Find complex number(s) $c$ for which the matrix given by 
+$
+A =
+\begin{pmatrix}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
+\frac{1}{\sqrt{2}} & c
+\end{pmatrix}
+$ is unitary. 
+\item For each of the following qubit states, compute the probability of measuring the outcomes $|0\rangle$ and $|1\rangle$ respectively.
+\begin{enumerate}
+    \item $\frac{1}{\sqrt{2}}\left(|0\rangle-|1\rangle\right)$
+    \item $e^i|0\rangle$
+    \item $\sqrt{\frac{1}{3}}|0\rangle+e^{-i}\sqrt{\frac{2}{3}}|1\rangle$
+    \item $i \sqrt{p}|0\rangle-\sqrt{1-p}|1\rangle$ for any real number $0\leq p\leq 1$.
+\end{enumerate}
+\end{enumerate}
+
+\section*{Group II}
+
+\begin{enumerate}
+\item In the Bloch sphere representation, a pure qubit state is written as
+\[
+|\psi\rangle
+=
+\cos\left(\tfrac{\theta}{2}\right)|0\rangle
++
+e^{i\phi}\sin\left(\tfrac{\theta}{2}\right)|1\rangle,
+\quad
+0 \le \theta \le \pi,\ \ 0 \le \phi < 2\pi.
+\]
+Using the physical indistinguishability of global phase, explain why values of $\theta$ outside the interval $[0,\pi]$ are not needed.
+
+\item 
+Suppose Alice and Bob execute the BB84 protocol and publicly identify those positions where they used the same basis.
+They then randomly choose $k$ of these positions to compare publicly in order to check for the presence of an eavesdropper.
+
+Assume an eavesdropper Eve measures each qubit in a randomly chosen basis, and forwards the measurement result to Bob.
+
+\begin{enumerate}
+\item Compute the probability that Eve is \textbf{not} detected on a fixed chosen bit.
+\item Compute the probability that Eve is not detected on any of the $k$ chosen bits.
+\end{enumerate}
+
+\item 
+Consider measurement in the $X$-basis $\{|+\rangle,|-\rangle\}$, where
+\[
+|+\rangle = \frac{|0\rangle+|1\rangle}{\sqrt{2}}, 
+\qquad 
+|-\rangle = \frac{|0\rangle-|1\rangle}{\sqrt{2}}.
+\]
+\begin{enumerate}
+\item Write down the corresponding (projective) measurement operators
+\[
+M_{+} = |+\rangle\langle +|,
+\qquad
+M_{-} = |-\rangle\langle -|.
+\]
+\item Compute $M_{+}$ and $M_{-}$ explicitly as $2\times 2$ matrices.
+\item Verify that both $M_{+}$ and $M_{-}$ are Hermitian.
+\item Verify that $M_{+} + M_{-} = I$.
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
