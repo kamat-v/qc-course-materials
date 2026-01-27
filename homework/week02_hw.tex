@@ -1,0 +1,175 @@
+\documentclass[12pt]{article}
+
+\setlength{\topmargin}{-0.5 in}
+\setlength{\textheight}{9.5 in}
+\setlength{\oddsidemargin}{-0.4 in}
+\setlength{\textwidth}{7.0 in}
+
+\usepackage{amsmath,graphicx,amssymb}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\pagestyle{empty}
+\begin{document}
+	
+\centerline{QC HW 2
+	\hspace{0.4 in}V. Kamat
+	\hspace{0.4 in}Spring 2026}
+\section*{Group I}
+
+\begin{enumerate}
+
+\item 
+Let
+$
+A =
+\begin{pmatrix}
+1 & i \\
+-i & 2
+\end{pmatrix},
+\quad
+|x\rangle =
+\begin{pmatrix}
+1 \\
+1+i
+\end{pmatrix}.
+$
+\begin{enumerate}
+\item Compute $A|x\rangle$.
+\item Compute $(A|x\rangle)^\dagger$.
+\item Compute $|x\rangle^\dagger A^\dagger=\langle x|A^\dagger$ and verify that
+$
+(A|x\rangle)^\dagger = \langle x| A^\dagger.
+$
+\end{enumerate}
+
+\item 
+Let
+$
+H = \frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1 & 1 \\
+1 & -1
+\end{pmatrix}.
+$
+\begin{enumerate}
+\item Compute $H^\dagger$.
+\item Compute $H^\dagger H$.
+\item Is $H$ Hermitian? Is it unitary?
+\end{enumerate}
+
+\item 
+Consider the matrix
+$
+M =
+\begin{pmatrix}
+2 & i \\
+-i & 3
+\end{pmatrix}.
+$
+\begin{enumerate}
+\item Compute $M^\dagger$.
+\item Verify that $M = M^\dagger$.
+\item Is $M$ Hermitian? Is it unitary?
+\end{enumerate}
+
+\item 
+Let
+$
+U =
+\begin{pmatrix}
+e^{i\theta} & 0 \\
+0 & e^{-i\theta}
+\end{pmatrix},
+\quad \theta \in \mathbb{R}.
+$
+\begin{enumerate}
+\item Compute $U^\dagger$.
+\item Verify that $U^\dagger U = I$.
+\item Is $U$ Hermitian? Justify your answer.
+\end{enumerate}
+\item 
+Let
+$
+X =
+\begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix},
+\quad
+Z =
+\begin{pmatrix}
+1 & 0 \\
+0 & -1
+\end{pmatrix}.
+$
+\begin{enumerate}
+\item Compute $XZ$ and $ZX$.
+\item Show that $XZ = -ZX$.
+\end{enumerate}
+\item 
+Let
+$
+|+\rangle = \dfrac{1}{\sqrt{2}}
+\begin{pmatrix}
+1 \\ 1
+\end{pmatrix},
+\quad
+|-\rangle = \dfrac{1}{\sqrt{2}}
+\begin{pmatrix}
+1 \\ -1
+\end{pmatrix}.
+$
+\begin{enumerate}
+\item Compute $H|+\rangle$ and $H|-\rangle$.
+\item Compute $Z|+\rangle$ and $Z|-\rangle$.
+\end{enumerate}
+
+
+\item 
+Let
+$
+|\psi\rangle =
+\sqrt{\tfrac{3}{4}}\,|0\rangle
++
+e^{i\pi/3}\sqrt{\tfrac{1}{4}}\,|1\rangle.
+$
+\begin{enumerate}
+\item Verify that $|\psi\rangle$ is normalized.
+\item Compute $Z|\psi\rangle$.
+\item Compute $X|\psi\rangle$.
+\end{enumerate}
+
+
+\item 
+Let
+$U = HZH$
+\begin{enumerate}
+\item Compute $U$ explicitly.
+\item Identify $U$ with one of the Pauli matrices.
+\end{enumerate}
+
+\end{enumerate}
+
+\section*{Group II}
+
+\begin{enumerate}
+\item 
+Consider the the following sequence of unitary operators acting on an initial qubit state $|0\rangle$ -- $H \rightarrow R(\phi) \rightarrow H$.
+\begin{enumerate}
+\item Compute the final state explicitly as a function of $\phi$.
+\item Evaluate your expression at $\phi = 0$, $\phi=\pi/2$ and $\phi = \pi$.
+\end{enumerate}
+\item 
+Let $|x\rangle$ be any ket in $\mathbb{C}^n$ and $A$ an $n\times n$ Hermitian matrix.
+Prove that $\langle x|A|x\rangle$ is a real number. 
+\item Prove that if $U$ and $V$ are unitary matrices, then so is $UV$.
+\item For this problem, $\||x\rangle\|$ denotes the \textit{norm} of the ket vector $|x\rangle$, where if $|x\rangle=[c_1 \cdots c_n]$, then $$\||x\rangle\|=\sqrt{|c_1|^2+\cdots +|c_n|^2}.$$ Using this definition, it can be seen that $\langle x|x\rangle=\||x\rangle\|^2$. Let $U$ be a unitary matrix.
+Prove that $U$ is norm-preserving, meaning that for any vector $|x\rangle$,
+\[
+\|U|x\rangle\| = \||x\rangle\|.
+\]
+\end{enumerate}
+
+\end{document}
