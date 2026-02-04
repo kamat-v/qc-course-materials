@@ -1,0 +1,84 @@
+\documentclass[12pt]{article}
+\setlength{\topmargin}{-0.5 in}
+\setlength{\textheight}{9.5 in}
+\setlength{\oddsidemargin}{-0.4 in}
+\setlength{\textwidth}{7.0 in}
+\usepackage{amsmath,graphicx,amssymb}
+\usepackage{tikz}
+\usepackage{braket}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\pagestyle{empty}
+\begin{document}
+	
+\centerline{QC HW 4: Tensor Products \& Entanglement
+	\hspace{0.4 in}V. Kamat
+	\hspace{0.4 in}Spring 2026}
+
+\section*{Group I}
+
+
+\begin{enumerate}
+\item Consider the BB84 protocol with the two bases $Z=\{|0\rangle,|1\rangle\}$, $X=\{|+\rangle,|-\rangle\}$.
+Suppose Eve performs an ``intercept--resend'' attack on \emph{every} qubit, i.e. she measures each qubit sent by Alice in a basis chosen uniformly at random, then resends the post-measurement state to Bob. Alice and Bob independently choose their bases uniformly at random for each round. For each of the following questions, assume that we are working only with the qubits in the \textit{sifted} key positions, i.e. positions where Alice and Bob choose the same basis. 
+
+\begin{enumerate}
+\item[(a)] For a given key position, what is the probability that Eve chose the same basis as Alice and Bob? 
+
+\item[(b)] What is the probability that Eve measured in the \emph{wrong} basis? Conditioned on this event, what is the probability that Bob's measurement disagrees with Alice's bit. 
+
+\item[(c)] Compute the probability that a fixed \textit{sifted} position produces a \emph{detection event}, i.e. the bit Alice prepared is different from the bit Bob measures.
+
+\item[(d)] Suppose Alice and Bob publicly compare $k$ randomly chosen same-basis rounds (a test subset of the sifted key). What is the probability that Eve goes undetected in all $k$ tests?
+
+\item[(e)] How large must $k$ be to make the probability of Eve getting detected larger than $99\%$?
+\end{enumerate}
+\item Use the \textbf{definition} of the tensor product to compute each of the following quantum states. Express each answer in the computational basis $\{|00\rangle, |01\rangle, |10\rangle, |11\rangle\}$. For parts \ref{1c} and \ref{1d}, recompute the product using \textbf{bilinearity}.  
+\begin{enumerate}
+    \item $|1\rangle \otimes |0\rangle$
+    \item $|+\rangle \otimes |0\rangle$, where $|+\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)$
+    \item \label{1c} $\left(\frac{1}{\sqrt{3}}|0\rangle + \sqrt{\frac{2}{3}}|1\rangle\right) \otimes |1\rangle$
+    \item \label{1d} $|-\rangle \otimes |+\rangle$
+\end{enumerate}
+
+\item Compute the following tensor products of matrices:
+\begin{enumerate}
+    \item $X \otimes I$, where $X = \begin{pmatrix} 0 & 1 \\ 1 & 0 \end{pmatrix}$ and $I = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}$
+    \item $H \otimes H$, where $H = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$
+    \item $Z \otimes X$, where $Z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$
+\end{enumerate}
+
+\item Consider the two-qubit state $|\psi\rangle = \dfrac{1}{\sqrt{8}}|00\rangle + \sqrt{\dfrac{3}{8}}|01\rangle + \dfrac{1}{\sqrt{8}}|10\rangle + \sqrt{\dfrac{3}{8}}|11\rangle$.
+\begin{enumerate}
+    \item Compute the probability of measuring outcome $|00\rangle$ in the computational basis.
+    \item Compute the probability of measuring outcome $|11\rangle$ in the computational basis.
+    \item Find two single-qubit states $|\phi\rangle$ and $|\chi\rangle$ such that $|\psi\rangle = |\phi\rangle \otimes |\chi\rangle$.
+\end{enumerate}
+
+\item Let $U_1 = H$ (Hadamard gate) and $U_2 = X$ (Pauli-X gate). Compute $(U_1 \otimes U_2)(|0\rangle \otimes |1\rangle)$ in the following two ways:
+\begin{enumerate}
+    \item Compute the tensor product state $|0\rangle \otimes |1\rangle$, then the tensor product operator $U_1 \otimes U_2$, then apply $(U_1 \otimes U_2)$ to the state $|0\rangle \otimes |1\rangle$.
+    \item Compute $(U_1|0\rangle) \otimes (U_2|1\rangle).$
+\end{enumerate}
+\end{enumerate}
+\section*{Group II}
+\begin{enumerate}
+\item Consider the following quantum circuit: $\text{CNOT}_{12} \cdot (H \otimes I)|00\rangle$. You begin with a basis state $|00\rangle$, then apply an $H$ gate to the first qubit, followed by $\text{CNOT}_{12}$, which is the CNOT gate where the first qubit is the ``control'' qubit, and the second qubit is the ``target'' qubit. 
+\begin{enumerate}
+    \item Verify (using the definitions of the respective gates and the properties of the tensor product) that the output of the circuit is the so-called Bell state $$|\Phi^+\rangle=\frac{1}{\sqrt{2}}(|00\rangle + |11\rangle).$$
+    \item Starting from the basis state $|00\rangle$, construct a circuit that outputs the Bell state given by $$|\Phi^-\rangle=\frac{1}{\sqrt{2}}(|00\rangle-|11\rangle).$$
+    \item Starting from the basis state $|00\rangle$, construct a circuit that outputs the Bell state given by $$|\Psi^+\rangle=\frac{1}{\sqrt{2}}(|01\rangle+|10\rangle).$$
+\end{enumerate}
+\item Let $|\psi\rangle$ be a two-qubit state. We say $|\psi\rangle$ is \textit{separable} (or \textit{product}) if there exist single-qubit states $|\phi\rangle$ and $|\chi\rangle$ such that $|\psi\rangle = |\phi\rangle \otimes |\chi\rangle$. Otherwise, we say that the state is \textit{entangled}.
+\begin{enumerate}
+    \item Show that if $|\psi\rangle = \alpha|00\rangle + \beta|01\rangle + \gamma|10\rangle + \delta|11\rangle$ is separable, then $\alpha\delta = \beta\gamma$.
+    \\
+    \\
+    \textbf{Hint:} Write $|\phi\rangle = a|0\rangle + b|1\rangle$ and $|\chi\rangle = c|0\rangle + d|1\rangle$, expand the tensor product using bilinearity, and compare coefficients.
+    
+    \item Use the criterion from part (a) to prove that the Bell state $|\Phi^+\rangle = \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle)$ is \textit{entangled} (not separable).
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
