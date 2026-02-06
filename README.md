@@ -1,3 +1,2 @@
 # qc-course-materials
-Notebooks and supporting material for an introductory quantum computing course using Python and Qiskit.
-The notebooks are organized by week and are designed to be run in Google Colab.
+Lecture notes, Python/Qiskit notebooks (created using Google Colab), homework problem sets and other supporting material for an introductory quantum computing course.
