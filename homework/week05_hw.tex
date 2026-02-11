@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\setlength{\topmargin}{-0.5 in}
+\setlength{\textheight}{9.5 in}
+\setlength{\oddsidemargin}{-0.4 in}
+\setlength{\textwidth}{7.0 in}
+\usepackage{amsmath,graphicx,amssymb, diagbox}
+\usepackage{tikz}
+\usepackage{braket}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\pagestyle{empty}
+\begin{document}
+	
+\centerline{QC HW 5
+	\hspace{0.4 in}V. Kamat
+	\hspace{0.4 in}Spring 2026}
+
+\begin{enumerate}
+\item Consider the \textbf{SWAP} unitary $U$ that, as the name implies, acts on any two arbitrary qubit states $|\psi\rangle$ and $|\phi\rangle$ as follows:
+$$U\left(|\psi\rangle \otimes |\phi\rangle\right)=|\phi\rangle\otimes |\psi\rangle.$$
+\begin{enumerate}
+    \item Write a matrix for $U$ by evaluating its action on the four computational basis states.
+    \item Prove that $U^2=I$. (This should make intuitive sense, given the definition.)
+    \item Construct a quantum circuit implementing the swap unitary using \textbf{only} $\text{CNOT}$ gates. Verify (using bilinearity) that your quantum circuit correctly maps $|\psi\rangle|\phi\rangle\to |\phi\rangle|\psi\rangle$ for arbitrary qubit states $|\psi\rangle$ and $|\phi\rangle$. 
+    \item The no-cloning theorem says that a cloning map $|\psi\rangle|0\rangle\to |\psi\rangle|\psi\rangle$ cannot be implemented by any unitary. Show that a weaker \textbf{state transfer} map $|\psi\rangle|0\rangle\to |0\rangle|\psi\rangle$ is achievable. 
+\end{enumerate}
+\item Recall that the Deutsch black box for a function $f:\{0,1\}\to \{0,1\}$ acts as
+\[
+O_f |x\rangle|y\rangle = |x\rangle|y \oplus f(x)\rangle.
+\]
+
+
+In the standard presentation of Deutsch's algorithm, the initial state is $|0\rangle|1\rangle$. In this problem, we investigate what happens if the second qubit is instead initialized to $|0\rangle$.
+
+\begin{enumerate}
+    \item[(a)] Start with initial state $|0\rangle|0\rangle$. Apply a Hadamard gate to both qubits and write the resulting state explicitly.
+    \item[(b)] Apply $O_f$ to your state from part (a). 
+    Express the result in terms of $f(0)$ and $f(1)$.
+    \item[(c)] Apply a Hadamard gate to the first qubit, and write out the resulting state. 
+    \item[(d)] If you measure the first qubit of the state from part (c), can you determine whether $f$ is constant or balanced with one query? Explain. 
+\end{enumerate}
+\item The one qubit gate $R_y(\theta)$ gate can be mathematically described as below:
+$$R_y(\theta)=\begin{bmatrix}
+\cos(\theta/2) &  -\sin (\theta/2)\\
+\sin(\theta/2) & \cos (\theta/2)
+\end{bmatrix}$$
+Its name signifies that its action on a qubit amounts to a rotation on the Bloch sphere by an angle of $\theta$ around the $y$-axis. 
+Prove that 
+$$[R_y(\theta_A) \otimes R_y(\theta_B)]|\Phi^+\rangle=\dfrac{\cos\left(\frac{\theta_A-\theta_B}{2}\right)\left(|00\rangle +|11\rangle \right) + \sin\left(\frac{\theta_A-\theta_B}{2}\right) \left( |10\rangle - |01\rangle \right)}{\sqrt{2}},$$
+where $|\Phi^+\rangle=\dfrac{1}{\sqrt{2}}\left(|00\rangle+|11\rangle\right)$ is the first Bell state. 
+\end{enumerate}
+\end{document}
