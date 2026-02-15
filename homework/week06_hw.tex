@@ -1,0 +1,30 @@
+\documentclass[12pt]{article}
+\setlength{\topmargin}{-0.5 in}
+\setlength{\textheight}{9.5 in}
+\setlength{\oddsidemargin}{-0.4 in}
+\setlength{\textwidth}{7.0 in}
+\usepackage{amsmath,graphicx,amssymb, diagbox, braket}
+\usepackage{tikz}
+\usepackage{braket}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\pagestyle{empty}
+\begin{document}
+	
+\centerline{QC HW 6
+	\hspace{0.4 in}V. Kamat
+	\hspace{0.4 in}Spring 2026}
+	\begin{quote}
+		{\sf
+		{\bf Directions.} Refer to the Week 6 notes (on quantum teleportation and the Deutsch--Jozsa circuit) for additional context surrounding each of the exercises below.  
+		}
+	\end{quote}
+\begin{enumerate}
+\item For each of the four cases $m_1m_2\in \{0,1\}^2$, show that Bob's qubit at the end of the quantum teleportation protocol is the same as Alice's qubit at the start. 
+\item In the Deutsch--Jozsa algorithm, show that when $f$ is constant, the amplitude of any outcome $\ket{z} \neq |0\rangle^{\otimes n}$ is $0$. More precisely, prove that given $z\neq 0^n$
+\[
+\sum_{x\in\{0,1\}^n} (-1)^{x\cdot z} = 0.
+\]
+\item Consider a following application of the Deutsch-Jozsa circuit. Note that the state $\ket{\psi_3}$ attained during the execution of the Deutsch Jozsa circuit (ignoring, as before, the $\ket{-}$ in the final register) is independent of the definition of $f$. Suppose the ``promise'' of the problem is that $f$ is an \emph{affine} function given by $f(x)=a\cdot x\oplus b$, where $a,x\in \{0,1\}^n$, $a\cdot x$ is the $\text{mod}-2$ inner product, and $b\in \{0,1\}$. How would you determine $a$ using a single query to the black box $O_f$ implementing $f$? 
+\end{enumerate}
+\end{document}
