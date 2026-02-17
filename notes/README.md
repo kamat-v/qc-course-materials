@@ -16,7 +16,7 @@ The trajectory of the course is roughly:
 - **Week 12:** Density matrices and mixed states  
 - **Weeks 13–14:** Introduction to quantum error correction  
 
-These notes are part of a currently ongoing teaching effort and will evolve over the duration of the course (and beyond).
+These notes are part of a currently ongoing course taught at Villanova University and will evolve over the duration of the semester (and beyond).
 
 ---
 
