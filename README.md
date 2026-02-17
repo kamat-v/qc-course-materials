@@ -6,4 +6,4 @@ The course emphasizes mathematical foundations, building from linear algebra and
 
 The materials are inspired by foundational texts such as Nielsen & Chuang, Yanofsky & Mannucci, Scott Aaronson’s *Quantum Computing Since Democritus*, and the IBM Quantum Learning Platform.
 
-This is part of an ongoing teaching effort. The repository will evolve during the semester and continue to be refined in future iterations of the course.
+This is part of an ongoing course being taught at Villanova University. The repository will evolve during the semester and continue to be refined in future iterations of the course.
