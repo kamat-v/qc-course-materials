@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\setlength{\topmargin}{-0.5 in}
+\setlength{\textheight}{9.5 in}
+\setlength{\oddsidemargin}{-0.4 in}
+\setlength{\textwidth}{7.0 in}
+\usepackage{amsmath,graphicx,amssymb, diagbox, braket}
+\usepackage{tikz}
+\usepackage{braket}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\pagestyle{empty}
+\begin{document}
+	
+\centerline{QC HW 7
+	\hspace{0.4 in}V. Kamat
+	\hspace{0.4 in}Spring 2026}
+	\begin{quote}
+		{\sf
+		{\bf Directions.} Refer to the Week 7 notes (on eigenvalues/eigenvectors and Grover search) for additional context surrounding each of the exercises below.  
+		}
+	\end{quote}
+\begin{enumerate}
+\item \begin{enumerate}
+\item[(a)] Show that $\ket{0}$ and $\ket{1}$ are eigenvectors of the Pauli-$Z$ matrix. What are the corresponding eigenvalues?
+
+\item[(b)] Show that $\ket{+}=\dfrac{\ket{0}+\ket{1}}{\sqrt2}$ and $\ket{-}=\dfrac{\ket{0}-\ket{1}}{\sqrt2}$ are eigenvectors of the Pauli-$X$ matrix. What are the corresponding eigenvalues?
+\end{enumerate}
+\item Let $\ket{\psi}=\alpha\ket{0}+\beta\ket{1}$ be a qubit state.
+
+\begin{enumerate}
+\item[(a)] Express $\ket{\psi}$ in the $\{\ket{+},\ket{-}\}$ basis.
+
+\item[(b)] If we measure $\ket{\psi}$ in the $\{\ket{+},\ket{-}\}$ basis, what are the probabilities of each outcome?
+
+\item[(c)] Verify that measuring in the $\{\ket{+},\ket{-}\}$ basis is operationally equivalent to applying a Hadamard gate followed by a computational basis measurement, i.e. the measurement probability for $\ket{+}$ in the first case is identical to the measurement probability for $\ket{0}$ in the second case (and similarly for $\ket{-}$ and $\ket{1}$).
+
+\end{enumerate}
+\item Let $H$ be a Hermitian operator and suppose $H\ket{v}=\lambda\ket{v}$ for some nonzero vector $\ket{v}$.
+
+\begin{enumerate}
+\item[(a)] Compute $\langle v|H|v\rangle$ in two different ways: first using $H\ket{v}=\lambda\ket{v}$, and second using the fact that $H=H^\dagger$.
+\item[(b)] Conclude that $\lambda\in \mathbb{R}$.
+\end{enumerate}
+\item Let $J$ denote the $N\times N$ matrix of all ones, and define $M = \frac{1}{N} J$. 
+\begin{enumerate}
+    \item Verify that $M=M^{\dagger}$ and $M^2=M$.
+    \item Show that the diffusion matrix given by $D=2M-I_N$ is unitary. 
+\end{enumerate}
+\item Consider the $4$-qubit state $\ket{\psi}=\displaystyle\sum_{x\in \{0,1\}^4} \alpha_x \ket{x}$, where $\alpha_x=\frac{11}{16}$ for $\ket{x}=\ket{1101}$, and $\alpha_x=\frac{3}{16}$ for each $\ket{x}\neq \ket{1101}$. This state is the result of applying \textbf{one} Grover iteration to the uniform superposition $\ket{s}=\dfrac{1}{\sqrt{16}}\displaystyle\sum_{x\in \{0,1\}^4} \ket{x}$.
+\begin{enumerate}
+    \item Apply a second and a third Grover iteration to $\ket{\psi}$ and compute the respective probabilities of measuring the marked input string. 
+    \item Now apply a \textit{fourth} Grover iteration to the state resulting from the third iteration. What do you notice? 
+\end{enumerate}
+\item 
+\begin{enumerate}
+\item Show that the outer product $\ket{s}\bra{s}=\frac{1}{N}J_N$, where $N=2^n$, $J$ is the $N\times N$ all $1$'s matrix, and $\ket{s}$ is the uniform superposition over all $n$-qubit computational basis states.
+\item \label{refd} Show that for the diffusion operator given by $D=2\ket{s}\bra{s}-I_N$, $D\ket{s}=\ket{s}$, and $D\ket{s^{\perp}}=-\ket{s^{\perp}}$ for any $\ket{s^{\perp}}$ that is orthogonal to $\ket{s}$.
+\item \label{refz} Show that $Z_f\ket{g}=-\ket{g}$ and $Z_f\ket{b}=\ket{b}$; as defined in the notes, $\ket{g}$ is the (unique) marked basis state, and $\ket{b}$ is the uniform superposition over all of the remaining $N-1$ unmarked basis states.
+\end{enumerate}
+\end{enumerate}
+\end{document}
