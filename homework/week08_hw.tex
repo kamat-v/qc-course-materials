@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\setlength{\topmargin}{-0.5 in}
+\setlength{\textheight}{9.5 in}
+\setlength{\oddsidemargin}{-0.4 in}
+\setlength{\textwidth}{7.0 in}
+\usepackage{amsmath,graphicx,amssymb, diagbox, braket}
+\usepackage{tikz}
+\usepackage{braket}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\pagestyle{empty}
+\begin{document}
+	
+\centerline{QC HW 8
+	\hspace{0.4 in}V. Kamat
+	\hspace{0.4 in}Spring 2026}
+	\begin{quote}
+		{\sf
+		{\bf Directions.} For Questions 1 and 2, refer to the Week 7 notes (on Grover search) for additional context surrounding each of the exercises below.  
+		}
+	\end{quote}
+\begin{enumerate}
+\item 
+\begin{enumerate}
+\item Show that the outer product $\ket{s}\bra{s}=\frac{1}{N}J_N$, where $N=2^n$, $J$ is the $N\times N$ all $1$'s matrix, and $\ket{s}$ is the uniform superposition over all $n$-qubit computational basis states.
+\item \label{refd} Show that for the diffusion operator given by $D=2\ket{s}\bra{s}-I_N$, $D\ket{s}=\ket{s}$, and $D\ket{s^{\perp}}=-\ket{s^{\perp}}$ for any $\ket{s^{\perp}}$ that is orthogonal to $\ket{s}$.
+\item As defined in the notes, let $\ket{g}$ be the unique marked basis state, and let $\ket{b}$ be the uniform superposition over all of the remaining $N-1$ unmarked basis states. Show that $\braket{g|b}=0$, i.e. $\ket{g}$ and $\ket{b}$ are orthogonal.
+\item \label{refz} Show that $Z_f\ket{g}=-\ket{g}$ and $Z_f\ket{b}=\ket{b}$, where $Z_f$ is the unitary phase oracle implementing the mapping $\ket{x}\to (-1)^{f(x)}\ket{x}$. 
+\end{enumerate}
+\item Rework the analysis of Grover's algorithm from the notes with the assumption that there are $1\leq M<< N$ marked states, and show that the optimal number of Grover iterations is $k\approx \dfrac{\pi}{4}\sqrt{\dfrac{N}{M}}-\dfrac{1}{2}.$
+\item Show that if $U$ is a unitary matrix with eigenvector $\ket{\psi}$ such that $U\ket{\psi}=\lambda\ket{\psi}$, $\lambda$ is a complex number of unit modulus (magnitude). 
+\end{enumerate}
+\end{document}
