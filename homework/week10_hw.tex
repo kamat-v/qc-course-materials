@@ -1,0 +1,32 @@
+\documentclass[12pt]{article}
+\setlength{\topmargin}{-0.5 in}
+\setlength{\textheight}{9.5 in}
+\setlength{\oddsidemargin}{-0.4 in}
+\setlength{\textwidth}{7.0 in}
+\usepackage{amsmath,graphicx,amssymb, diagbox, braket}
+\usepackage{tikz}
+\usepackage{braket}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\pagestyle{empty}
+\begin{document}
+	
+\centerline{QC HW 9
+	\hspace{0.4 in}V. Kamat
+	\hspace{0.4 in}Spring 2026}
+
+\begin{enumerate}
+\item Find the spectral decomposition of the Pauli-Y matrix $Y = \begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}$. Use the spectral decomposition to compute $Y^{100}$ without using matrix multiplication.
+\item Prove the following, for any $\theta\in [0,1)$.
+\begin{enumerate}
+    \item $\left|\dfrac{1+e^{2\pi i\theta}}{2}\right|^2=\cos^2(\pi\theta)$.
+    \item $\left|\dfrac{1-e^{2\pi i\theta}}{2}\right|^2=\sin^2(\pi\theta)$
+\end{enumerate} 
+\item Suppose $U$ is a unitary matrix with eigenvector $\ket{\psi}$ such that $U\ket{\psi}=e^{i\pi/2}\ket{\psi}$. Run the Quantum Phase Estimation circuit with $m=2$ phase qubits -- i.e. beginning with the state $\ket{00}\ket{\psi}$, applying a Hadamard gate each on the first two qubits, applying controlled-$U^1$ and controlled-$U^2$ gates on $\ket{\psi}$, and finally applying the $\text{QFT}^{\dagger}_4$ to the first two qubits. Clearly write out the state of the first two qubits \textbf{before} $\text{QFT}^{\dagger}_4$ is applied. What will be the measurement outcome in the first two qubits? 
+\item 
+\begin{enumerate}
+    \item Write out each of the eight $8^{\text{th}}$ roots of unity. 
+    \item Prove that for any integer $N>1$, the $N^{\text{th}}$ roots of unity sum to $0$.
+\end{enumerate}
+\end{enumerate}
+\end{document}
