@@ -1,0 +1,36 @@
+\documentclass[12pt]{article}
+\setlength{\topmargin}{-0.5 in}
+\setlength{\textheight}{9.5 in}
+\setlength{\oddsidemargin}{-0.4 in}
+\setlength{\textwidth}{7.0 in}
+\usepackage{amsmath,graphicx,amssymb, diagbox, braket}
+\usepackage{tikz}
+\usepackage{braket}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+		\node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\pagestyle{empty}
+\begin{document}
+	
+\centerline{QC HW 10
+	\hspace{0.4 in}V. Kamat
+	\hspace{0.4 in}Spring 2026}
+
+\begin{enumerate}
+\item \label{one} Given positive integers $N$ and $a$ with $\text{gcd}(a,N)=1$, define a linear operator $M_a$ that implements the following mapping: for any $x\in \{0,\ldots,N-1\}$, $M_a|x\rangle=|ax\text{ mod } N\rangle$. 
+\\
+\\
+Prove that the mapping is \textbf{bijective}, i.e. \emph{injective} (two distinct inputs $|x_1\rangle$ and $|x_2\rangle$ map to two distinct outputs) and \emph{surjective} (each element in $\{0,\ldots,N-1\}$ is realized as an output of this mapping for some input). 
+\\
+\\
+\textbf{Note:} The above result shows that the $N\times N$ matrix representing the operator $M_a$ is a permutation matrix, i.e. a binary matrix containing exactly one $1$ in each row and column. This implies that the columns form a set of orthonormal basis vectors, implying unitarity of $M_a$. When converting this into an $n$-qubit quantum gate -- for use in the Quantum Phase Estimation (QPE) circuit -- we find smallest $n$ such that $N\leq 2^n$ and map all states $|x\rangle$ with $x\geq N$ to themselves. 
+
+\item Let $a,N$ be as defined in Problem \ref{one}, and suppose $r=\text{ord}_N(a)$. Let $\omega_r=e^{2\pi i/r}$ be the primitive $r^{\text{th}}$ root of unity. For $s\in \{0,\ldots,r-1\}$, define $$|\psi_s\rangle=\dfrac{1}{\sqrt{r}}\displaystyle\sum_{k=0}^{r-1} (\omega_r^{-s})^k|a^k\rangle.$$
+\\
+\\
+Show that for any $s\in \{0,\ldots,r-1\}$, $|\psi_s\rangle$ is an eigenvector of $M_a$ with eigenvalue $\omega_r^s$ (which in QPE terminology means an \emph{eigenphase} of $s/r$).
+
+\item When using QPE for finding $\text{ord}_N(a)$ for given $\text{gcd}(a,N)=1$ (with the additional properties that the order is even and $a^{r/2}\not\equiv -1 (\text{ mod } N)$), we use the unitary $M_a$. Given that we typically do not know its eigenvectors, we prepare the standard computational basis state $|1\rangle$; you have to prove that it is an equal superposition over all eigenvectors $|\psi_s\rangle$, for $s\in \{0,\ldots,r-1\}$, thus allowing QPE to sample each phase $s/r$ with equal probability. More formally, prove that
+$$|1\rangle=\dfrac{1}{\sqrt{r}}\displaystyle\sum_{s=0}^{r-1} |\psi_s\rangle.$$
+\item In the final (classical) post-processing step of Shor's algorithm, the algorithm tries to recover the actual phase $s/r$ from the $m$-bit approximation $y/2^m$ output by QPE, using a continued fractions expansion of $y/2^m$. Assume the scenario $N=21$, $a=2$ with $8$-bit precision QPE. It can be checked that $\text{ord}_N(a)=6.$ Assuming that QPE measures a) the eigenvector $|\psi_2\rangle$, and b) the eigenvector $|\psi_3\rangle$, what is the most likely measurement outcome $y/2^8$ in each of two cases? Furthermore, in each of the two cases, apply the continued fractions algorithm to $y/256$ to recover the correct phase in reduced form, and consequently find either the order $r$ or its divisor in the phase denominator. 
+\end{enumerate} 
+\end{document}
